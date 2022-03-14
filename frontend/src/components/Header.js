@@ -1,11 +1,13 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
-const Header = ({title, num}) => {
+const navbarStyle = {
+  backgroundColor: "lightblue",
+};
+
+const Header = ({ title }) => {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar style={navbarStyle} variant="light">
       <Container>
         <Navbar.Brand href="/">{title}</Navbar.Brand>
         <Nav className="me-auto">
@@ -15,7 +17,7 @@ const Header = ({title, num}) => {
         </Nav>
       </Container>
     </Navbar>
-  )
+  );
 };
 
 export default Header;
