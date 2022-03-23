@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 
 
+const UNSPLASH_API_KEY = process.env.REACT_APP_UNSPLASH_API_KEY;
 
 const App = () => {
 
@@ -13,8 +14,17 @@ const App = () => {
     e.preventDefault();
     // console.log(e);
     // console.log(e.target[0].value);
-    console.log(search);
-  };
+    // console.log(search);
+
+    fetch(`https://api.unsplash.com/photos/random/?query=${search}&client_id=${UNSPLASH_API_KEY}`)
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
 
   // console.log(search);
 
